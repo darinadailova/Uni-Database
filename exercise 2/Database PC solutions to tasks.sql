@@ -41,5 +41,17 @@ WHERE firstPC.hd = secondPC.hd
 and firstPC.code != secondPC.code;
 
 --Task 5
+SELECT firstPC.model,  secondPC.model
+FROM dbo.pc  firstPC, dbo.pc secondPC
+WHERE firstPC.hd = secondPC.hd 
+AND firstPC.speed = secondPC.speed
+AND firstPC.code < secondPC.code;
 
 --Task 6
+SELECT DISTINCT maker
+FROM dbo.product
+WHERE type = 'PC' 
+AND model in (SELECT MODEL
+			  FROM dbo.pc
+			  WHERE SPEED > 400
+			  GROUP BY model having COUNT(model) > 1);
