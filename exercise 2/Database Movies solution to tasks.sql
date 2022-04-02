@@ -2,7 +2,7 @@
 
 --Tasks 1
 --Напишете заявка, която извежда имената на актьорите мъже, участвали във
---филма The Usual Suspects.
+--филма The Usual Suspects. 
 (SELECT STARNAME
 FROM dbo.STARSIN
 WHERE MOVIETITLE = 'The Usual Suspects')
